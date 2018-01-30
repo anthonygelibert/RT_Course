@@ -22,7 +22,7 @@ public final class Course {
     /** Start the race. */
     public void gogogo() {
         for (final Coureur coureur : this.m_coureurs) {
-            coureur.start();
+            new Thread(coureur, coureur.toString()).start();
         }
     }
 

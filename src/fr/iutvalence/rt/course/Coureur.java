@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Anthony GELIBERT
  * @version 1.0.0
  */
-public final class Coureur extends Thread {
+public final class Coureur implements Runnable {
     /** Current position for the next winner. */
     private static int s_position = 1;
 
