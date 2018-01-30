@@ -9,12 +9,12 @@ import java.util.LinkedList;
  * @author Anthony GELIBERT
  * @version 1.0.0
  */
-public class Course {
+public final class Course {
     /** All the runners of the race. */
-    private Collection<Coureur> coureurs = new LinkedList<Coureur>();
+    private final Collection<Coureur> coureurs = new LinkedList<>();
 
     /** Add a new runner. */
-    public void add(String nom, String prenom) {
+    public void add(final String nom, final String prenom) {
         this.coureurs.add(new Coureur(nom, prenom));
     }
 

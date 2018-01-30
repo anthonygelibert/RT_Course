@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Anthony GELIBERT
  * @version 1.0.0
  */
-public class Coureur extends Thread {
+public final class Coureur extends Thread {
     /** Current position for the next winner. */
     private static int    position = 1;
     /** Runner's last name. */
@@ -17,7 +17,7 @@ public class Coureur extends Thread {
     private final  String prenom;
 
     /** Create a new runner. */
-    public Coureur(String nom, String prenom) {
+    public Coureur(final String nom, final String prenom) {
         this.nom = nom;
         this.prenom = prenom;
     }
@@ -28,7 +28,7 @@ public class Coureur extends Thread {
      *
      * @param c the runner ending its race
      */
-    public static void affichePosition(Coureur c) {
+    public static void affichePosition(final Coureur c) {
         System.out.println(c + " arrive en " + Coureur.position + "éme position... ");
         System.out.println("Pour " + c + "...");
         try {
@@ -43,17 +43,17 @@ public class Coureur extends Thread {
 
     @Override
     public void run() {
-        Random random = new Random(System.currentTimeMillis());
+        final Random random = new Random(System.currentTimeMillis());
         for (int i = 1; i <= 10; i++) {
             try {
                 Thread.sleep(1000 + random.nextInt(1000));
             }
-            catch (InterruptedException e) {
+            catch (final InterruptedException e) {
                 /* NOTHING */
             }
-            System.out.println(i * 10 + "m par " + this);
+            System.out.printf("%dm par %s%n", i * 10, this);
         }
-        System.out.println(this + " a fini la course");
+        System.out.printf("%s a fini la course%n", this);
         Coureur.affichePosition(this);
     }
 

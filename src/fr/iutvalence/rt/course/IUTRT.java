@@ -6,13 +6,13 @@ package fr.iutvalence.rt.course;
  * @author Anthony GELIBERT
  * @version 1.0.0
  */
-public class IUTRT {
+public final class IUTRT {
     /**
      * Main method.
      *
      * @param args unused
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Course c = new Course();
         c.add("BENEFICE", "Claire");
         c.add("CHABALIER", "Colin");
