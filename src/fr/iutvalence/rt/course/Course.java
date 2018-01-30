@@ -1,5 +1,6 @@
 package fr.iutvalence.rt.course;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -23,5 +24,10 @@ public final class Course {
         for (final Coureur coureur : this.m_coureurs) {
             coureur.start();
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Course %s", Arrays.toString(m_coureurs.toArray()));
     }
 }
