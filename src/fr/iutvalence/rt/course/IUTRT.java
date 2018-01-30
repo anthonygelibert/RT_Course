@@ -12,7 +12,7 @@ public final class IUTRT {
      *
      * @param args unused
      */
-    public static void main(final String[] args) {
+    public static void main(final String... args) {
         final Course course = new Course();
         course.add("BENEFICE", "Claire");
         course.add("CHABALIER", "Colin");
