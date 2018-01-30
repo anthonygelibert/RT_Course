@@ -1,5 +1,7 @@
 package fr.iutvalence.rt.course;
 
+import java.io.IOException;
+
 /**
  * Small class to illustrate the project.
  *
@@ -24,8 +26,18 @@ public final class IUTRT {
         course.add("MICHEL", "Frederic");
         course.add("NOURIGAT", "Genevieve");
         course.add("PASTORINO", "Luc");
+
+        course.debutCourse();
         course.gogogo();
         course.afficherClassement();
+
+        try {
+            course.sauvegarderClassement("classement.txt");
+        }
+        catch (final IOException e) {
+            System.err.println("Le classement ne peut pas être enregistré dans le fichier \"classement.txt\"");
+            System.err.printf("Message d'erreur reçu : %s%n", e.getMessage());
+        }
     }
 
 }
