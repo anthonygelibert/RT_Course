@@ -11,17 +11,17 @@ import java.util.LinkedList;
  */
 public final class Course {
     /** All the runners of the race. */
-    private final Collection<Coureur> coureurs = new LinkedList<>();
+    private final Collection<Coureur> m_coureurs = new LinkedList<>();
 
     /** Add a new runner. */
     public void add(final String nom, final String prenom) {
-        this.coureurs.add(new Coureur(nom, prenom));
+        this.m_coureurs.add(new Coureur(nom, prenom));
     }
 
     /** Start the race. */
     public void gogogo() {
-        for (Coureur c : this.coureurs) {
-            c.start();
+        for (final Coureur coureur : this.m_coureurs) {
+            coureur.start();
         }
     }
 }

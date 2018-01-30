@@ -13,18 +13,18 @@ public final class IUTRT {
      * @param args unused
      */
     public static void main(final String[] args) {
-        Course c = new Course();
-        c.add("BENEFICE", "Claire");
-        c.add("CHABALIER", "Colin");
-        c.add("CRETON", "Laurence");
-        c.add("DUCCINI", "Christian");
-        c.add("FOURTY", "Nicolas");
-        c.add("GENON-CATALOT", "Denis");
-        c.add("JAMONT", "Jean-Paul");
-        c.add("MICHEL", "Frederic");
-        c.add("NOURIGAT", "Genevieve");
-        c.add("PASTORINO", "Luc");
-        c.gogogo();
+        final Course course = new Course();
+        course.add("BENEFICE", "Claire");
+        course.add("CHABALIER", "Colin");
+        course.add("CRETON", "Laurence");
+        course.add("DUCCINI", "Christian");
+        course.add("FOURTY", "Nicolas");
+        course.add("GENON-CATALOT", "Denis");
+        course.add("JAMONT", "Jean-Paul");
+        course.add("MICHEL", "Frederic");
+        course.add("NOURIGAT", "Genevieve");
+        course.add("PASTORINO", "Luc");
+        course.gogogo();
         System.out.println("*************************");
     }
 
