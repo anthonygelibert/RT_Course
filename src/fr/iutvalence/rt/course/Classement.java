@@ -11,9 +11,10 @@ import java.util.Map;
  */
 public final class Classement {
     /** Ranking of the race (position -> runner). */
-    private final Map<Integer, Coureur> m_classement = new HashMap<>();
+    private final Map<Integer, Coureur> m_classement = new HashMap<>(20);
+
     /** Current position for the next winner. */
-    private       int                   m_position   = 1;
+    private int m_position = 1;
 
     /** Add the given runner to the ranking. */
     public synchronized void arrive(final Coureur coureur) {
@@ -21,17 +22,20 @@ public final class Classement {
         this.m_position++;
     }
 
+    /** Display the current ranking. */
     public void affiche() {
         System.out.println(this);
     }
 
     @Override
     public String toString() {
-        String resultat = "Classement de la course (" + this.m_classement.size() + " participant(s))\n";
-        resultat += "------------------------------------------------------\n\n";
-        for (Map.Entry<Integer, Coureur> position : this.m_classement.entrySet()) {
-            resultat += position.getKey() + ". " + position.getValue() + "\n";
+        final StringBuilder resultat = new StringBuilder();
+        resultat.append(" -------------------------------------------\n");
+        resultat.append(String.format("| Classement de la course (%d participants) |\n", this.m_classement.size()));
+        resultat.append(" -------------------------------------------\n\n");
+        for (final Map.Entry<Integer, Coureur> position : this.m_classement.entrySet()) {
+            resultat.append(String.format("%d. %s\n", position.getKey(), position.getValue()));
         }
-        return resultat;
+        return resultat.toString();
     }
 }

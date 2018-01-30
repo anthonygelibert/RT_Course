@@ -13,6 +13,7 @@ import java.util.LinkedList;
 public final class Course {
     /** All the runners of the race. */
     private final Collection<Coureur> m_coureurs   = new LinkedList<>();
+    /** Ranking of the race. */
     private final Classement          m_classement = new Classement();
 
     /** Add a new runner. */
@@ -22,14 +23,25 @@ public final class Course {
 
     /** Start the race. */
     public void gogogo() {
+        final Collection<Thread> coureurs = new LinkedList<>();
+
         for (final Coureur coureur : this.m_coureurs) {
-            new Thread(coureur, coureur.toString()).start();
+            final Thread coureurThread = new Thread(coureur, coureur.toString());
+            coureurThread.start();
+            coureurs.add(coureurThread);
+        }
+
+        for (final Thread coureur : coureurs) {
+            try {
+                coureur.join();
+            }
+            catch (final InterruptedException ignore) { /* NOTHING */ }
         }
     }
 
     /** Called by a runner ending the race. */
-    protected void arrive(Coureur c) {
-        this.m_classement.arrive(c);
+    void arrive(final Coureur coureur) {
+        this.m_classement.arrive(coureur);
     }
 
     /** Display the current ranking. */

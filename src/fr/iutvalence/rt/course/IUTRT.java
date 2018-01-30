@@ -25,13 +25,6 @@ public final class IUTRT {
         course.add("NOURIGAT", "Genevieve");
         course.add("PASTORINO", "Luc");
         course.gogogo();
-
-        try {
-            Thread.sleep(20000);
-        }
-        catch (final InterruptedException ignore) {
-            /* NOTHING */
-        }
         course.afficherClassement();
     }
 

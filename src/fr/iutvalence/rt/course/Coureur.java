@@ -3,7 +3,7 @@ package fr.iutvalence.rt.course;
 import java.util.Random;
 
 /**
- * A runner (identified by its first and last names).
+ * A runner (identified by its first and last names) registered in a given race.
  *
  * @author Anthony GELIBERT
  * @version 1.0.0
