@@ -30,8 +30,8 @@ public final class Coureur extends Thread {
      * @param coureur the runner ending its race
      */
     public static void affichePosition(final Coureur coureur) {
-        System.out.println(coureur + " arrive en " + Coureur.s_position + "éme position... ");
-        System.out.println("Pour " + coureur + "...");
+        System.out.printf("%s arrive en %déme position... %n", coureur, Coureur.s_position);
+        System.out.printf("Pour %s...%n", coureur);
         try { Thread.sleep(500); }
         catch (final InterruptedException e) { /* NOTHING */ }
         System.out.println("Les hip hip 	HOURRA!");
